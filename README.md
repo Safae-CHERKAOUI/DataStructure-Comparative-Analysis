@@ -1,1 +1,1 @@
-This project explores the time performance of various data structures (lists, vectors, maps) in C++. Additionally, it includes a demonstration of MapReduce implementation to highlight the impact of lambda functions. A simple code is given to see the importance of reserving memory in vectors for optimization.
+
