@@ -39,12 +39,12 @@ int main() {
 
         int numIterations = 100; // Number of iterations for each insertion
         std::chrono::duration<double> totalDiff(0);
-        for (int i = 0; i < numIterations; ++i) {
             auto start = std::chrono::high_resolution_clock::now();
+        for (int i = 0; i < numIterations; ++i) {
             lst.insert(it, 42);
-            auto end = std::chrono::high_resolution_clock::now();
-            totalDiff += (end - start);
         }
+            auto end = std::chrono::high_resolution_clock::now();
+            totalDiff = (end - start);
 
         // Calculate the average time
         std::chrono::duration<double> avgDiff = totalDiff / numIterations;
