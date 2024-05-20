@@ -8,12 +8,12 @@ using namespace std;
 int main(){
 
     vector<int> vec1 , vec2;
-    // Reserve memory for 1000000000 elements
-    vec1.reserve(1000000000);
+    // Reserve memory for 100000000 elements
+    vec1.reserve(100000000);
     std::chrono::duration<double> totalDiff1(0);
     auto start1 = std::chrono::high_resolution_clock::now();
     // Push elements into the vector
-    for (int i = 0; i < 1000000000; ++i) {
+    for (int i = 0; i < 100000000; ++i) {
         vec1.push_back(i);
     }
     auto end1 = std::chrono::high_resolution_clock::now();
@@ -26,7 +26,7 @@ int main(){
     std::chrono::duration<double> totalDiff2(0);
     auto start2 = std::chrono::high_resolution_clock::now();
     // Push elements into the vector
-    for (int i = 0; i < 1000000000; ++i) {
+    for (int i = 0; i < 100000000; ++i) {
         vec2.push_back(i);
     }
     auto end2 = std::chrono::high_resolution_clock::now();
