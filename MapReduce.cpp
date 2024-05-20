@@ -28,7 +28,7 @@ int main() {
     std::vector<std::chrono::duration<double>> insertionTimes;
     std::vector<int> sizes = {100, 500, 1000, 2000, 5000, 10000, 50000, 100000};
 
-    auto mapFunction = [&](int size, int position) -> std::chrono::duration<double> {
+    auto mapFunction = [&](const int& size, const int& position) -> std::chrono::duration<double> {
         std::list<int> lst;
         for (int i = 0; i < size; i++) {
             lst.push_back(i);
@@ -39,12 +39,13 @@ int main() {
 
         int numIterations = 100; // Number of iterations for each insertion
         std::chrono::duration<double> totalDiff(0);
-            auto start = std::chrono::high_resolution_clock::now();
+        
+        auto start = std::chrono::high_resolution_clock::now();
         for (int i = 0; i < numIterations; ++i) {
             lst.insert(it, 42);
         }
-            auto end = std::chrono::high_resolution_clock::now();
-            totalDiff = (end - start);
+        auto end = std::chrono::high_resolution_clock::now();
+        totalDiff = (end - start);
 
         // Calculate the average time
         std::chrono::duration<double> avgDiff = totalDiff / numIterations;
